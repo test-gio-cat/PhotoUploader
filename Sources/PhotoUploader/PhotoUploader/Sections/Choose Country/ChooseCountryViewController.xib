@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseCountryViewController" customModule="PhotoUploader" customModuleProvider="target">
+            <connections>
+                <outlet property="continueButton" destination="al1-3Z-WLp" id="N2m-g8-lXo"/>
+                <outlet property="header" destination="wCo-oM-JNq" id="wkQ-Fz-CZo"/>
+                <outlet property="progressView" destination="lnN-VV-kZG" id="ooF-6W-JVe"/>
+                <outlet property="tableView" destination="JDD-bh-4c1" id="KKx-RL-d02"/>
+                <outlet property="view" destination="psj-fr-rbL" id="Vss-5W-NlG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="psj-fr-rbL">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCo-oM-JNq" userLabel="Header" customClass="PhotoUploaderHeaderView" customModule="PhotoUploader" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="115"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vim-ca-5nB">
+                            <rect key="frame" x="16" y="45.5" width="382" height="24"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djd-PK-FYb">
+                                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="9C8-WN-xse"/>
+                                        <constraint firstAttribute="width" constant="24" id="zPN-NK-mfQ"/>
+                                    </constraints>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeG-BA-pBW">
+                                    <rect key="frame" x="32" y="0.0" width="350" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="vim-ca-5nB" firstAttribute="centerX" secondItem="wCo-oM-JNq" secondAttribute="centerX" id="5qL-X8-hob"/>
+                        <constraint firstItem="vim-ca-5nB" firstAttribute="leading" secondItem="wCo-oM-JNq" secondAttribute="leading" constant="16" id="Ht8-fs-elH"/>
+                        <constraint firstAttribute="trailing" secondItem="vim-ca-5nB" secondAttribute="trailing" constant="16" id="fu3-yB-t9f"/>
+                        <constraint firstItem="vim-ca-5nB" firstAttribute="centerY" secondItem="wCo-oM-JNq" secondAttribute="centerY" id="yMr-Jn-es9"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="back" destination="Djd-PK-FYb" id="BIU-HB-RXB"/>
+                        <outlet property="title" destination="ZeG-BA-pBW" id="x8o-VM-DSn"/>
+                    </connections>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JDD-bh-4c1" customClass="ChooseCountryTableView" customModule="PhotoUploader" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="159" width="414" height="575"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnN-VV-kZG" userLabel="Loading View" customClass="ProgressView" customModule="PhotoUploader" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="pwE-EY-kfS" userLabel="Spinner">
+                            <rect key="frame" x="188.5" y="390.5" width="37" height="37"/>
+                            <color key="color" name="TextCommon"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="pwE-EY-kfS" firstAttribute="centerY" secondItem="lnN-VV-kZG" secondAttribute="centerY" id="EVk-Yc-fbE"/>
+                        <constraint firstItem="pwE-EY-kfS" firstAttribute="centerX" secondItem="lnN-VV-kZG" secondAttribute="centerX" id="pr9-1h-kes"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="activityIndicator" destination="pwE-EY-kfS" id="zxJ-Ux-2OT"/>
+                    </connections>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al1-3Z-WLp" customClass="PhotoUploaderButton" customModule="PhotoUploader" customModuleProvider="target">
+                    <rect key="frame" x="16" y="766" width="382" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="eds-L9-3xE"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="onContinue:" destination="-1" eventType="touchUpInside" id="U1c-LL-DdF"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="uRf-T1-sLf"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="al1-3Z-WLp" firstAttribute="top" secondItem="JDD-bh-4c1" secondAttribute="bottom" constant="32" id="23j-Fh-LDp"/>
+                <constraint firstItem="wCo-oM-JNq" firstAttribute="leading" secondItem="uRf-T1-sLf" secondAttribute="leading" id="7r5-yM-0U0"/>
+                <constraint firstItem="JDD-bh-4c1" firstAttribute="height" secondItem="wCo-oM-JNq" secondAttribute="height" multiplier="5:1" id="9me-pv-jGN"/>
+                <constraint firstItem="uRf-T1-sLf" firstAttribute="trailing" secondItem="JDD-bh-4c1" secondAttribute="trailing" id="9qS-wA-ur6"/>
+                <constraint firstItem="uRf-T1-sLf" firstAttribute="bottom" secondItem="al1-3Z-WLp" secondAttribute="bottom" constant="32" id="9wn-LR-Kli"/>
+                <constraint firstItem="lnN-VV-kZG" firstAttribute="top" secondItem="uRf-T1-sLf" secondAttribute="top" id="AHE-x5-xbM"/>
+                <constraint firstItem="uRf-T1-sLf" firstAttribute="trailing" secondItem="wCo-oM-JNq" secondAttribute="trailing" id="Xjm-3K-q2s"/>
+                <constraint firstItem="uRf-T1-sLf" firstAttribute="trailing" secondItem="al1-3Z-WLp" secondAttribute="trailing" constant="16" id="ZCN-Ul-6PE"/>
+                <constraint firstItem="lnN-VV-kZG" firstAttribute="leading" secondItem="uRf-T1-sLf" secondAttribute="leading" id="afb-mG-kXo"/>
+                <constraint firstItem="al1-3Z-WLp" firstAttribute="leading" secondItem="uRf-T1-sLf" secondAttribute="leading" constant="16" id="cqi-C3-UW9"/>
+                <constraint firstItem="uRf-T1-sLf" firstAttribute="bottom" secondItem="lnN-VV-kZG" secondAttribute="bottom" id="gPh-aK-VBz"/>
+                <constraint firstItem="JDD-bh-4c1" firstAttribute="leading" secondItem="uRf-T1-sLf" secondAttribute="leading" id="gf6-Ba-YVb"/>
+                <constraint firstItem="JDD-bh-4c1" firstAttribute="top" secondItem="wCo-oM-JNq" secondAttribute="bottom" id="kty-yt-s1e"/>
+                <constraint firstItem="wCo-oM-JNq" firstAttribute="top" secondItem="uRf-T1-sLf" secondAttribute="top" id="qYL-ZE-LZZ"/>
+                <constraint firstItem="uRf-T1-sLf" firstAttribute="trailing" secondItem="lnN-VV-kZG" secondAttribute="trailing" id="yLA-Mg-bQk"/>
+            </constraints>
+            <point key="canvasLocation" x="282.60869565217394" y="-62.276785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="TextCommon">
+            <color red="0.25882352941176473" green="0.27450980392156865" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

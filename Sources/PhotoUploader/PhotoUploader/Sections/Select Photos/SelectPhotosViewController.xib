@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectPhotosViewController" customModule="PhotoUploader" customModuleProvider="target">
+            <connections>
+                <outlet property="content" destination="OW8-4C-jF8" id="WFA-fj-EWm"/>
+                <outlet property="continueButton" destination="Eeh-BL-jdo" id="vNK-TP-CT3"/>
+                <outlet property="header" destination="GS6-6o-paZ" id="rS6-gE-tGn"/>
+                <outlet property="loadingView" destination="0sL-fz-rPy" id="mkt-gL-PMx"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GS6-6o-paZ" userLabel="Header" customClass="PhotoUploaderHeaderView" customModule="PhotoUploader" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="115"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KMH-NQ-aeV">
+                            <rect key="frame" x="16" y="45.5" width="382" height="24"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a07-w9-v30">
+                                    <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="24" id="NvL-Ak-fh5"/>
+                                        <constraint firstAttribute="height" constant="24" id="wcf-9a-XGf"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="onBack:" destination="-1" eventType="touchUpInside" id="mOu-st-bT8"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKm-of-LGx">
+                                    <rect key="frame" x="32" y="0.0" width="350" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="KMH-NQ-aeV" secondAttribute="trailing" constant="16" id="THS-IR-2lK"/>
+                        <constraint firstItem="KMH-NQ-aeV" firstAttribute="centerY" secondItem="GS6-6o-paZ" secondAttribute="centerY" id="Z9I-Bk-oga"/>
+                        <constraint firstItem="KMH-NQ-aeV" firstAttribute="leading" secondItem="GS6-6o-paZ" secondAttribute="leading" constant="16" id="ZMr-I0-9IO"/>
+                        <constraint firstItem="KMH-NQ-aeV" firstAttribute="centerX" secondItem="GS6-6o-paZ" secondAttribute="centerX" id="mVJ-BL-acg"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="back" destination="a07-w9-v30" id="QaX-dB-i3x"/>
+                        <outlet property="title" destination="QKm-of-LGx" id="oJe-8U-ktq"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OW8-4C-jF8" userLabel="Content" customClass="SelectPhotosContent" customModule="PhotoUploader" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="159" width="414" height="575"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8I3-vS-Sji">
+                            <rect key="frame" x="16" y="99.5" width="382" height="376"/>
+                            <subviews>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GBI-N6-kqB" customClass="PhotosCollectionView" customModule="PhotoUploader" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="320"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="320" id="Gkt-vY-Wx5"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wtg-2q-UOJ">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Oj5-2S-3kd">
+                                    <rect key="frame" x="0.0" y="336" width="382" height="40"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYp-Uj-pfK" customClass="PhotoUploaderButton" customModule="PhotoUploader" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="187" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="0lq-7v-Gla"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="onSelectFromLibrary:" destination="-1" eventType="touchUpInside" id="QOa-Xe-BjT"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpd-Tc-U2H" customClass="PhotoUploaderButton" customModule="PhotoUploader" customModuleProvider="target">
+                                            <rect key="frame" x="195" y="0.0" width="187" height="40"/>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="onTakePhoto:" destination="-1" eventType="touchUpInside" id="QJT-re-KRl"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="gPy-f6-vem" userLabel="Spinner">
+                            <rect key="frame" x="188.5" y="241" width="37" height="37"/>
+                            <color key="color" name="TextCommon"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="8I3-vS-Sji" firstAttribute="centerY" secondItem="OW8-4C-jF8" secondAttribute="centerY" id="9dI-tb-Vch"/>
+                        <constraint firstItem="gPy-f6-vem" firstAttribute="centerY" secondItem="GBI-N6-kqB" secondAttribute="centerY" id="img-7u-ocL"/>
+                        <constraint firstItem="gPy-f6-vem" firstAttribute="centerX" secondItem="GBI-N6-kqB" secondAttribute="centerX" id="lmb-RU-fNF"/>
+                        <constraint firstAttribute="trailing" secondItem="8I3-vS-Sji" secondAttribute="trailing" constant="16" id="m0E-16-A8O"/>
+                        <constraint firstItem="8I3-vS-Sji" firstAttribute="leading" secondItem="OW8-4C-jF8" secondAttribute="leading" constant="16" id="sqM-7S-Yc7"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="activityIndicator" destination="gPy-f6-vem" id="WXO-hY-CRq"/>
+                        <outlet property="cameraButton" destination="vpd-Tc-U2H" id="O1Z-Id-pLr"/>
+                        <outlet property="photoLibraryButton" destination="aYp-Uj-pfK" id="qtp-2a-n6a"/>
+                        <outlet property="photosCollection" destination="GBI-N6-kqB" id="9xC-8l-REQ"/>
+                    </connections>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eeh-BL-jdo" customClass="PhotoUploaderButton" customModule="PhotoUploader" customModuleProvider="target">
+                    <rect key="frame" x="16" y="766" width="382" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="fyO-J2-viM"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="onContinue:" destination="-1" eventType="touchUpInside" id="YBG-Dv-3eP"/>
+                    </connections>
+                </button>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sL-fz-rPy" customClass="PhotoUploaderLoadingView" customModule="PhotoUploader" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mqz-5g-n7p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkU-X6-chD">
+                                <rect key="frame" x="16" y="346" width="382" height="204"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="VI6-Av-iPl">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="204"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wy-hd-OuL">
+                                                <rect key="frame" x="170.5" y="0.0" width="41.5" height="108"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2iP-2M-o4b">
+                                                <rect key="frame" x="16" y="132" width="350" height="4"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="4" id="6Iz-X0-9wC"/>
+                                                </constraints>
+                                            </progressView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tiy-8s-nfd">
+                                                <rect key="frame" x="71" y="160" width="240" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="Zkc-WJ-j8f"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="2iP-2M-o4b" secondAttribute="trailing" constant="16" id="OBm-oP-m7h"/>
+                                            <constraint firstItem="2iP-2M-o4b" firstAttribute="leading" secondItem="VI6-Av-iPl" secondAttribute="leading" constant="16" id="mQc-hs-3lZ"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dkU-X6-chD" secondAttribute="height" multiplier="15:8" id="WS4-CN-Vdd"/>
+                                    <constraint firstItem="VI6-Av-iPl" firstAttribute="leading" secondItem="dkU-X6-chD" secondAttribute="leading" id="YmG-83-YCH"/>
+                                    <constraint firstItem="VI6-Av-iPl" firstAttribute="top" secondItem="dkU-X6-chD" secondAttribute="top" id="kFr-cE-8hw"/>
+                                    <constraint firstAttribute="bottom" secondItem="VI6-Av-iPl" secondAttribute="bottom" id="qo2-DR-SAw"/>
+                                    <constraint firstAttribute="trailing" secondItem="VI6-Av-iPl" secondAttribute="trailing" id="z3J-U6-sag"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dkU-X6-chD" secondAttribute="trailing" constant="16" id="2kA-Vr-Qqd"/>
+                            <constraint firstItem="dkU-X6-chD" firstAttribute="centerY" secondItem="Mqz-5g-n7p" secondAttribute="centerY" id="GXO-96-u2N"/>
+                            <constraint firstItem="dkU-X6-chD" firstAttribute="leading" secondItem="Mqz-5g-n7p" secondAttribute="leading" constant="16" id="QUi-BW-VeI"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="light"/>
+                    <connections>
+                        <outlet property="centerView" destination="dkU-X6-chD" id="7WT-ec-zRJ"/>
+                        <outlet property="progressView" destination="2iP-2M-o4b" id="zlp-LH-WjJ"/>
+                        <outlet property="titleLabel" destination="0Wy-hd-OuL" id="I61-Qh-lkK"/>
+                    </connections>
+                </visualEffectView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OW8-4C-jF8" secondAttribute="trailing" id="2XC-Ad-TGX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Eeh-BL-jdo" secondAttribute="trailing" constant="16" id="58Y-1i-S3j"/>
+                <constraint firstItem="Eeh-BL-jdo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="DLZ-Yg-rYZ"/>
+                <constraint firstItem="GS6-6o-paZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="E4r-lX-fBw"/>
+                <constraint firstItem="0sL-fz-rPy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="EnI-Mh-KR1"/>
+                <constraint firstItem="OW8-4C-jF8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FcI-jk-Yfh"/>
+                <constraint firstItem="OW8-4C-jF8" firstAttribute="height" secondItem="GS6-6o-paZ" secondAttribute="height" multiplier="5:1" id="Nzk-VQ-erg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0sL-fz-rPy" secondAttribute="trailing" id="WAv-y5-6wf"/>
+                <constraint firstItem="GS6-6o-paZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="aW2-a9-jKT"/>
+                <constraint firstItem="OW8-4C-jF8" firstAttribute="top" secondItem="GS6-6o-paZ" secondAttribute="bottom" id="bBk-iV-nYC"/>
+                <constraint firstAttribute="bottom" secondItem="0sL-fz-rPy" secondAttribute="bottom" id="f8V-ni-Qy7"/>
+                <constraint firstItem="GS6-6o-paZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="itB-iX-vCE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Eeh-BL-jdo" secondAttribute="bottom" constant="32" id="j89-K8-hHg"/>
+                <constraint firstItem="Eeh-BL-jdo" firstAttribute="top" secondItem="OW8-4C-jF8" secondAttribute="bottom" constant="32" id="o4P-Yq-br0"/>
+                <constraint firstItem="0sL-fz-rPy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="s6D-9j-I5X"/>
+            </constraints>
+            <point key="canvasLocation" x="24.637681159420293" y="59.598214285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="TextCommon">
+            <color red="0.25882352941176473" green="0.27450980392156865" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

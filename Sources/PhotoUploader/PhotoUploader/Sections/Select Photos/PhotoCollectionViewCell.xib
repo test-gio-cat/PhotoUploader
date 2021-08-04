@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PhotoCollectionViewCell" customModule="PhotoUploader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kpn-uh-p0S">
+                        <rect key="frame" x="4" y="4" width="248" height="248"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7L-4v-Hfa">
+                        <rect key="frame" x="-10" y="-10" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="OID-ga-K2E"/>
+                            <constraint firstAttribute="height" constant="44" id="fRE-ty-Rml"/>
+                        </constraints>
+                        <connections>
+                            <action selector="onDelete:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3YN-AM-xph"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Kpn-uh-p0S" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="KfE-We-t1r"/>
+                <constraint firstItem="q7L-4v-Hfa" firstAttribute="top" secondItem="Kpn-uh-p0S" secondAttribute="top" constant="-14" id="Z8P-w3-PbH"/>
+                <constraint firstAttribute="bottom" secondItem="Kpn-uh-p0S" secondAttribute="bottom" constant="4" id="aNC-OR-Cnh"/>
+                <constraint firstItem="q7L-4v-Hfa" firstAttribute="leading" secondItem="Kpn-uh-p0S" secondAttribute="leading" constant="-14" id="jD2-Ad-HNw"/>
+                <constraint firstItem="Kpn-uh-p0S" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="l8K-wN-kf3"/>
+                <constraint firstAttribute="trailing" secondItem="Kpn-uh-p0S" secondAttribute="trailing" constant="4" id="qBh-rN-iVb"/>
+            </constraints>
+            <size key="customSize" width="256" height="207"/>
+            <connections>
+                <outlet property="deleteButton" destination="q7L-4v-Hfa" id="QAQ-Ce-YzR"/>
+                <outlet property="imageView" destination="Kpn-uh-p0S" id="cEo-F6-7Fp"/>
+            </connections>
+            <point key="canvasLocation" x="173.91304347826087" y="115.51339285714285"/>
+        </collectionViewCell>
+    </objects>
+</document>
