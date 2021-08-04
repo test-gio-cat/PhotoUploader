@@ -55,9 +55,9 @@ The 20% of the code is covered by unit tests. I decided to test some utils struc
 
 The code is not covered by ui tests.
 
-# Continuos Integration
+# Continuous Integration
 
-Continuos integration has been implemented using [Fastlane](https://docs.fastlane.tools) and [Github Actions](https://github.com/features/actions). I've decided to use Fastlane instead a Github Action job available in the Marketplace because Fastlane can be used also in other ci systems. 
+Continuous integration has been implemented using [Fastlane](https://docs.fastlane.tools) and [Github Actions](https://github.com/features/actions). I've decided to use Fastlane instead a Github Action job available in the Marketplace because Fastlane can be used also in other ci systems. 
 
 On my side, for this project Github Actions was the best ci tool because it's free for simple user repository and because it was easier to integrate in my branch.
 
